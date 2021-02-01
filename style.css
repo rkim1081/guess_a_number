@@ -1,0 +1,19 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background: #000;
+    color: aliceblue;
+}
+
+.lastResult {
+    color: aliceblue;
+    padding: 5px;
+    
+}
