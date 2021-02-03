@@ -6,7 +6,7 @@ let guessField = document.querySelector(".guessField");
 let guessCount = 1;
 let resetButton;
 
-let randomNumber = Math.floor(Math.random() * 100 + 1;
+let randomNumber = Math.floor(Math.random() * 100 + 1);
 
 guessField.focus();
 
@@ -18,7 +18,7 @@ function checkGuess() {
         guesses.textContent = 'Previous Guesses: ';
     }
 
-    guessees.textContent += userGUess + '';
+    guesses.textContent += userGuess + '';
 
     // If they get the numbers
     if (userGuess === randomNumber) {
@@ -52,6 +52,7 @@ function checkGuess() {
 
 
 }
+//start a new game button will not work
 
 guessSubmit.addEventListener("click", checkGuess);
 // GameOver btn
@@ -59,14 +60,14 @@ function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
-    resetButton.textContent = 'Start New Game';
+    resetButton.textContent = 'Start New Game'; //when pressed, new game will not reset????help here
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetButton);
 }
 //reset btn
 
 function resetGame() {
-    guessCount = 1;
+    guessCount = 10;
     var resetParas = document.querySelector('.results p')
     for(var i = 0; i < resetParas.clientHeight; i++) {
         resetParas[i].textContent = '';
