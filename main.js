@@ -18,7 +18,7 @@ function checkGuess() {
         guesses.textContent = 'Previous Guesses: ';
     }
 
-    guesses.textContent += userGuess + '';
+    guesses.textContent += userGuess + ' ';
 
     // If they get the numbers
     if (userGuess === randomNumber) {
@@ -62,19 +62,19 @@ function setGameOver() {
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start New Game'; //when pressed, new game will not reset????help here
     document.body.appendChild(resetButton);
-    resetButton.addEventListener('click', resetButton);
+    resetButton.addEventListener('click', resetGame);
 }
 //reset btn
 
 function resetGame() {
     guessCount = 10;
-    var resetParas = document.querySelector('.results p')
-    for(var i = 0; i < resetParas.clientHeight; i++) {
+    var resetParas = document.querySelectorAll('.results p')
+    for(var i = 0; i < resetParas.length; i++) {
         resetParas[i].textContent = '';
     }
 
 
-resetButton.parentNode.removeChild(resetButton);
+document.body.removeChild(resetButton);
 guessField.disabled = false;
 guessSubmit.disabled = false;
 guessField.value = '';
